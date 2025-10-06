@@ -137,3 +137,32 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# -----------------------------
+# Frontend / Vite / React
+# -----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+
+# -----------------------------
+# Users & Tasks microservices
+# -----------------------------
+users/node_modules/
+users/dist/
+users/.env
+users/.env.local
+
+tasks/node_modules/
+tasks/dist/
+tasks/.env
+tasks/.env.local
+
+# -----------------------------
+# Docker
+# -----------------------------
+docker-compose.override.yml
+docker-compose.local.yml
+*.tmp
