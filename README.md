@@ -43,8 +43,8 @@ JWT_SECRET=mi_secreto
 
 **frontend/.env**
 ```
-VITE_API_USERS_URL=http://localhost:3001
-VITE_API_TASKS_URL=http://localhost:3002
+VITE_API_USERS_URL=http://localhost:3001/api/v1
+VITE_API_TASKS_URL=http://localhost:3002/api/v1
 ```
 
 > Nota: No subir `.env` al repositorio por seguridad.
