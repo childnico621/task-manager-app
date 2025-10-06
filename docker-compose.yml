@@ -1,0 +1,66 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: task-manager-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret123
+      MYSQL_DATABASE: task_manager_db
+      MYSQL_USER: task_user
+      MYSQL_PASSWORD: task_pass
+    ports:
+      - "3306:3306"
+    networks:
+      - task-manager-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  users:
+    build: ./users
+    container_name: task-manager-users
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: mysql
+      DB_USER: task_user
+      DB_PASSWORD: task_pass
+      DB_NAME: task_manager_db
+    depends_on:
+      - mysql
+    networks:
+      - task-manager-network
+
+  tasks:
+    build: ./tasks
+    container_name: task-manager-tasks
+    restart: always
+    ports:
+      - "3002:3002"
+    environment:
+      DB_HOST: mysql
+      DB_USER: task_user
+      DB_PASSWORD: task_pass
+      DB_NAME: task_manager_db
+    depends_on:
+      - mysql
+    networks:
+      - task-manager-network
+
+  frontend:
+    build: ./frontend
+    container_name: task-manager-frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - users
+      - tasks
+    networks:
+      - task-manager-network
+
+networks:
+  task-manager-network:
+
+volumes:
+  mysql-data:

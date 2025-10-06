@@ -1,0 +1,124 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* mis estilos */
+form {
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 24px 20px;
+  background: #424242;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 0;
+  transition: border-color 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #f5faff;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+
+/* editar tarea */
+input[type="text"],
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #f5faff;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #007bff;
+}
+
+
+form input:focus,
+form textarea:focus,
+form button:focus {
+  color: #222 !important; /* Texto oscuro solo al enfocar */
+}
